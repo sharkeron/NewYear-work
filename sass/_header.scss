@@ -1,0 +1,170 @@
+/*==== Header Start ====*/
+header{
+	.head{
+		height: 122px;
+		background: #44433E;
+
+		.container{
+			display: flex;
+
+			.logo{
+				width: 30%;
+				margin-top: 28px;
+			}
+
+			.nav{
+				margin-top: 56px;
+				width: 70%;
+
+				&-menu{
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					padding-left: 80px;
+					margin-top: -7px;
+
+					&-item{
+						font-family: "Montserrat-Bold";
+						font-size: 13px;
+						display: inline-block;
+						color: #B8B8B8;
+						margin-right: 16px;
+						height: 73px;
+
+						a{
+							display: block;
+							outline: none;
+							text-decoration: none;
+							color:inherit;
+							height: 100%;
+						}
+						.fa-search{
+							font-size: 22px;
+							vertical-align: middle;
+						}
+					}
+					&-item:last-child{
+						margin-left: 13px;
+					}
+					&-item:hover{
+						color: #18CFAB;
+					}
+					&-item:hover:not(:last-child){
+						border-bottom: 2px solid #18CFAB;
+					}
+				}
+			}
+		}
+	}
+
+	.container-fluid{
+		background: #3C3C3C;
+		color: #FFFFFF;
+		font-family: "Montserrat-Bold";
+
+		.page-suptitle{
+			margin: 0;
+			padding-top: 245px;
+			font-size: 35px;
+
+			.green{
+				color: #18CFAB;
+			}
+		}
+
+		.page-title{
+			margin: 0;
+			padding-top: 45px;
+			font-size: 79px;
+		}
+
+		.page-subtitle{
+			font-size: 34px;
+			padding-top: 36px;
+			margin: 0;
+			color:  #D4D4D4;
+			font-family: "Montserrat-Light";
+			margin-bottom: 147px;
+		}
+
+		.foot{
+			width: 1140px;
+			margin: 0 auto;
+			position: relative;
+
+			.btns{
+
+				.btn-explore, .btn-purchase{
+					outline: none;
+					border: none;
+					width: 165px;
+					height: 60px;
+					border-top: 5px solid #fff;
+					border-radius: 5px;
+					color: #fff;
+					font-family: "Montserrat-Bold";
+					text-align: center;
+					font-size: 13px;
+					cursor:pointer;
+					margin-bottom: 240px;
+				}
+
+				.btn-explore{
+					background: #18CFAB;
+				}
+
+				.btn-explore:hover{
+					background: #fff;
+					color: #18CFAB;
+				}
+
+				.btn-purchase{
+					background: #00CBF6;
+				}
+
+				.btn-purchase:hover{
+					color: #00cbf6;
+					background: #fff;
+				}
+			}
+
+			.slider-header{
+				position: absolute;
+				width: 170px;
+				top:0;
+				right: 0;
+
+				.slides{
+					img{
+						width: 100%;
+					}
+				}
+
+				.slick-btns{
+
+					.slick-prev, .slick-next{
+						width: 62px;
+						height: 62px;
+						background: #3C4140;
+						color: #878787;
+						outline: none;
+						border: none;
+						font-size: 22px;
+						margin-top: 18px;
+					}
+
+					.slick-prev:hover, .slick-next:hover{
+						color: #fff;
+						background: #18CFAB;
+					}
+
+					.slick-prev{
+						margin-right: 41px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*==== Header End ====*/

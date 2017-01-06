@@ -1,0 +1,70 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.caps{
+	text-transform: capitalize;
+}
+
+.upcase{
+	text-transform: uppercase;
+}
+
+.text-center{
+	text-align: center;
+}
+
+@font-face {
+	font-family: 'Montserrat-Regular';
+	font-weight: normal;
+	font-style: normal;
+
+	src: url('../fonts/montserrat-regular/Montserrat-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/montserrat-regular/Montserrat-Regular.otf') format('opentype'), url('../fonts/montserrat-regular/Montserrat-Regular.woff') format('woff'), url('../fonts/montserrat-regular/Montserrat-Regular.ttf') format('truetype'), url('../fonts/montserrat-regular/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+}
+
+@font-face {
+	font-family: 'Montserrat-Light';
+	font-weight: normal;
+	font-style: normal;
+
+	src: url('../fonts/montserrat-light/Montserrat-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/montserrat-light/Montserrat-Light.otf') format('opentype'), url('../fonts/montserrat-light/Montserrat-Light.woff') format('woff'), url('../fonts/montserrat-light/Montserrat-Light.ttf') format('truetype'), url('../fonts/montserrat-light/Montserrat-Light.svg#Montserrat-Light') format('svg');
+}
+
+@font-face {
+	font-family: 'Montserrat-Bold';
+	font-weight: normal;
+	font-style: normal;
+
+	src: url('../fonts/montserrat-bold/Montserrat-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/montserrat-bold/Montserrat-Bold.otf') format('opentype'), url('../fonts/montserrat-bold/Montserrat-Bold.woff') format('woff'), url('../fonts/montserrat-bold/Montserrat-Bold.ttf') format('truetype'), url('../fonts/montserrat-bold/Montserrat-Bold.svg#Montserrat-Bold') format('svg');
+}
+
+.lines {
+	position: relative;
+
+	width: 75px;
+	height: 1px;
+	margin: 0 auto;
+	margin-bottom: 75px;
+
+	border-top: 1px solid #18CFAB;
+}
+
+.lines:after {
+	position: absolute;
+	top: 3px;
+	left: 10px;
+
+	width: 75px;
+	height: 1px;
+
+	content: "";
+
+	border-top: 1px solid #18CFAB;
+}
