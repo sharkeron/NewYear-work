@@ -1,9 +1,25 @@
+function initMap() {
+	mapOption = {
+		zoom: 14,
+		center: {
+			lat: 43.2678033,
+			lng: 6.6308296
+		}
+	};
+
+	map = new google.maps.Map(document.getElementById('map'), mapOption);
+
+	marker = new google.maps.Marker({
+		map: map
+	});
+}
+
 $(function () {
 
 	// слайдер в шапке
 
 	$('header .slides').slick({
-		infinite: false,
+		infinite: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		dots: false,
@@ -97,6 +113,53 @@ $(function () {
 		$('.services .tabs-content .tab-content').css('display', '');
 	});
 
+	// открытие модального окна блок news
+
+	$(function () {
+		$(document).on('click','.news .thumbnail', function () {
+			$('.modal').addClass('active');
+			var pic = $(this).html();
+			$('.modal .photo').html(pic);
+			$('.modal .photo .date').css('display','none');
+		});
+
+		$(document).on('click', '.modal', function () {
+			$('.modal').removeClass('active');
+		});
+	});
+
+	// анимация набора чисел с включением при скролле
+
+	$(function(){
+
+		var show = true,
+			 countbox = "#blocks-2";
+
+		$(window).on("scroll load resize", function(){
+
+			if(!show){
+				return false;
+			}
+
+			var scroll = $(window).scrollTop();
+			var distanceToBlock = $(countbox).offset().top;
+			var windowHeight = $(window).height();
+			var documentHeight = $(document).height();
+			var blockHeight = $(countbox).outerHeight();
+
+			if(scroll + 200 >= distanceToBlock || windowHeight + scroll === documentHeight || blockHeight + distanceToBlock < windowHeight){
+				$(".numbers-animate").spincrement({
+					from: 0,
+					thousandSeparator: "",
+					duration: 2500
+				});
+
+				show = false;
+			}
+		});
+
+	});
+
 	// выравнивание высоты отзывов
 
 	$(function () {
@@ -143,10 +206,16 @@ $(function () {
 		var tab_id = $('.testimonials .active[data-tab]').attr('data-tab');
 		tab_id++;
 
-		verificationTabId(tab_id);
-
 		if ($('.testimonials [data-tab=' + tab_id + ']').length === 0) {
 			tab_id = 4;
+		}
+
+		if(tab_id === 4) {
+			$('.testimonials .tab-next').removeClass('active');
+			$('.testimonials .tab-prev').addClass('active');
+		} else if (tab_id !== 1 && tab_id !== 4) {
+			$('.testimonials .tab-prev').addClass('active');
+			$('.testimonials .tab-next').addClass('active');
 		}
 
 		$('.testimonials .active[data-tab]').removeClass('active');
@@ -164,10 +233,16 @@ $(function () {
 		var tab_id = $('.testimonials .active[data-tab]').attr('data-tab');
 		tab_id--;
 
-		verificationTabId(tab_id);
-
 		if ($('.testimonials [data-tab=' + tab_id + ']').length === 0) {
 			tab_id = 1;
+		}
+
+		if(tab_id === 1) {
+			$('.testimonials .tab-prev').removeClass('active');
+			$('.testimonials .tab-next').addClass('active');
+		} else if (tab_id !== 1 && tab_id !== 4) {
+			$('.testimonials .tab-prev').addClass('active');
+			$('.testimonials .tab-next').addClass('active');
 		}
 
 		$('.testimonials .active[data-tab]').removeClass('active');
@@ -179,26 +254,31 @@ $(function () {
 
 	// Табы по малому аватару
 
-	// $(document).on('click', '.testimonials .avatars .avatars-item', function (e) {
-	//
-	// 	e.preventDefault();
-	// 	var tab_id = $(this).attr('data-tab');
-	// 	$('.testimonials .tabs-content .active[data-tab]').removeClass('active');
-	// 	$('.testimonials .tabs-content [data-tab="' + tab_id + '"]').addClass('active');
-	// });
+	$(document).on('click', '.testimonials .mini-avatars .avatars-item', function (e) {
+
+		e.preventDefault();
+		var tab_id = $(this).attr('data-tab');
+		$('.testimonials .tabs-content .active[data-tab]').removeClass('active');
+		$('.testimonials .mini-avatars .active[data-tab]').removeClass('active');
+		$('.testimonials .tabs-content .tab-content[data-tab="' + tab_id + '"]').addClass('active');
+		$('.testimonials .mini-avatars .avatars-item[data-tab="' + tab_id + '"]').addClass('active');
+
+		var pic = $('.testimonials .mini-avatars .active img').attr('src');
+		$('.testimonials .tab-content img').attr('src', pic);
+	});
 
 	// открытие модального окна блок our-team
 
 	$(function () {
 		$(document).on('click','.our-team .thumbnail', function () {
-			$('.our-team .modal').addClass('active');
+			$('.modal').addClass('active');
 			var pic = $(this).html();
-			$('.our-team .modal .photo').html(pic);
-			$('.our-team .modal .photo .open-bg').css('display','none');
+			$('.modal .photo').html(pic);
+			$('.modal .photo .open-bg').css('display','none');
 		});
 
-		$(document).on('click', '.our-team .modal', function () {
-			$('.our-team .modal').removeClass('active');
+		$(document).on('click', '.modal', function () {
+			$('.modal').removeClass('active');
 		});
 	});
 

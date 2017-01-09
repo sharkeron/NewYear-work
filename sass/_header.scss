@@ -1,8 +1,11 @@
 /*==== Header Start ====*/
 header{
+	background: url(../img/bg-head.jpg);
+	background-size: cover;
+
 	.head{
 		height: 122px;
-		background: #44433E;
+		background: rgba(68,67,62, .5);
 
 		.container{
 			display: flex;
@@ -58,7 +61,7 @@ header{
 	}
 
 	.container-fluid{
-		background: #3C3C3C;
+
 		color: #FFFFFF;
 		font-family: "Montserrat-Bold";
 
@@ -111,6 +114,7 @@ header{
 
 				.btn-explore{
 					background: #18CFAB;
+					margin-right: 28px;
 				}
 
 				.btn-explore:hover{
@@ -145,7 +149,7 @@ header{
 					.slick-prev, .slick-next{
 						width: 62px;
 						height: 62px;
-						background: #3C4140;
+						background: transparent;
 						color: #878787;
 						outline: none;
 						border: none;
