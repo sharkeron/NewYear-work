@@ -219,141 +219,202 @@
 		}
 	}
 
-	.history, .biography{
-		display: none;
+	.tabs-content{
+		margin-bottom: 70px;
+		.history, .biography{
+			display: none;
 
-		color: #fff;
+			color: #BEBEBE;
 
-		font-family: "Montserrat-Regular";
-		font-size: 16px;
+			font-family: "Montserrat-Light";
+			font-size: 14px;
 
-		&.active{
-			display: block;
-		}
-	}
-
-	.bars{
-		display: none;
-
-		width: 100%;
-		margin-bottom: 100px;
-
-		&.active{
-			display: block;
+			&.active{
+				display: block;
+			}
 		}
 
-		.bar{
+		.history{
+
+			.text{
+				margin-top: 0;
+				line-height: 25px;
+				margin-bottom: 45px;
+			}
+
+
+			.list{
+
+				.left, .right{
+					width: 50%;
+					display: inline-block;
+
+					ul{
+						padding: 0;
+						margin: 0;
+
+						li{
+							display: inline-block;
+							width: 100%;
+							margin-bottom: 15px;
+							height: 24px;
+							position: relative;
+							padding-left: 41px;
+
+							&::before{
+								position: absolute;
+								content: url(../img/check.png);
+								width: 24px;
+								height: 24px;
+								left: 0px;
+								top: -3px;
+							}
+						}
+					}
+				}
+
+				.right{
+					margin-left: -5px;
+				}
+			}
+
+		}
+
+		.biography{
+
+			.text{
+				font-family: "Montserrat-Light";
+				font-size: 14px;
+				line-height: 25px;
+				color: #BEBEBE;
+				margin: 0;
+			}
+		}
+
+		.bars{
+			display: none;
+
 			width: 100%;
-		   height: 39px;
-			margin-bottom: 14px;
 
-			color: #fff;
-			border-radius: 5px;
-			box-shadow:
-				inset 1px 1px 0 #959595,
-				inset -1px -1px 0 #959595;
+			&.active{
+				display: block;
+			}
 
-			font-family: "Montserrat-Regular";
-			font-size: 13px;
-			line-height: 27px;
+			.bar{
+				width: 100%;
+			   height: 39px;
+				margin-bottom: 14px;
 
-		.progress.ui {
-			float: left;
+				color: #fff;
+				border-radius: 5px;
+				box-shadow:
+					inset 1px 1px 0 #959595,
+					inset -1px -1px 0 #959595;
 
-			width: 0%;
-			max-width: 100%;
-			height: 100%;
-			padding: 6px 0 0 17px;
+				font-family: "Montserrat-Regular";
+				font-size: 13px;
+				line-height: 27px;
 
-			animation: ui 2s 1 forwards;
+			.progress.ui {
+				float: left;
 
-			border-radius: 5px;
-			background: #9C5DA5;
-		}
+				width: 0%;
+				max-width: 100%;
+				height: 100%;
+				padding: 6px 0 0 17px;
 
-		@keyframes ui {
-		    from { width: 25% }
+				animation: ui 2s 1 forwards;
 
-		    to { width: 75% }
-		}
-		.progress.web-design {
-			float: left;
+				border-radius: 5px;
+				background: #9C5DA5;
+			}
 
-			width: 0%;
-			max-width: 100%;
-			height: 100%;
-			padding: 6px 0 0 17px;
+			@keyframes ui {
+			    from { width: 25% }
 
-			animation: web-design 2s 1 forwards;
+			    to { width: 75% }
+			}
+			.progress.web-design {
+				float: left;
 
-			border-radius: 5px;
-			background: #11B0DE;
-		}
+				width: 0%;
+				max-width: 100%;
+				height: 100%;
+				padding: 6px 0 0 17px;
 
-		@keyframes web-design {
-		    from { width: 25% }
+				animation: web-design 2s 1 forwards;
 
-		    to { width: 85% }
-		}
-		.progress.wp {
-			float: left;
+				border-radius: 5px;
+				background: #11B0DE;
+			}
 
-			width: 0%;
-			max-width: 100%;
-			height: 100%;
-			padding: 6px 0 0 17px;
+			@keyframes web-design {
+			    from { width: 25% }
 
-			animation: wp 2s 1 forwards;
+			    to { width: 85% }
+			}
+			.progress.wp {
+				float: left;
 
-			border-radius: 5px;
-			background: #D67F7F;
-		}
+				width: 0%;
+				max-width: 100%;
+				height: 100%;
+				padding: 6px 0 0 17px;
 
-		@keyframes wp {
-		    from { width: 25% }
+				animation: wp 2s 1 forwards;
 
-		    to { width: 70% }
-		}
-		.progress.html-css {
-			float: left;
+				border-radius: 5px;
+				background: #D67F7F;
+			}
 
-			width: 0%;
-			max-width: 100%;
-			height: 100%;
-			padding: 6px 0 0 17px;
+			@keyframes wp {
+			    from { width: 25% }
 
-			animation: html-css 2s 1 forwards;
+			    to { width: 70% }
+			}
+			.progress.html-css {
+				float: left;
 
-			border-radius: 5px;
-			background: #20BC9D;
-		}
+				width: 0%;
+				max-width: 100%;
+				height: 100%;
+				padding: 6px 0 0 17px;
 
-		@keyframes html-css {
-		    from { width: 25% }
+				animation: html-css 2s 1 forwards;
 
-		    to { width: 90% }
-		}
-		.progress.app-design {
-			float: left;
+				border-radius: 5px;
+				background: #20BC9D;
+			}
 
-			width: 0%;
-			max-width: 100%;
-			height: 100%;
-			padding: 6px 0 0 17px;
+			@keyframes html-css {
+			    from { width: 25% }
 
-			animation: app-design 2s 1 forwards;
+			    to { width: 90% }
+			}
+			.progress.app-design {
+				float: left;
 
-			border-radius: 5px;
-			background: #BB8A36;
-		}
+				width: 0%;
+				max-width: 100%;
+				height: 100%;
+				padding: 6px 0 0 17px;
 
-		@keyframes app-design {
-		    from { width: 25% }
+				animation: app-design 2s 1 forwards;
 
-		    to { width: 85% }
-		}
+				border-radius: 5px;
+				background: #BB8A36;
+			}
+
+			@keyframes app-design {
+			    from { width: 25% }
+
+			    to { width: 85% }
+			}
+			}
 		}
 	}
+
+
 }
 
 /*==== Section #about-us End ====*/

@@ -16,6 +16,7 @@ header{
 			}
 
 			.nav{
+				position: relative;
 				margin-top: 56px;
 				width: 70%;
 
@@ -41,19 +42,65 @@ header{
 							color:inherit;
 							height: 100%;
 						}
+					}
+					.search{
+						margin-left: 13px;
+
+						&.active{
+							color: #18CFAB;
+						}
+
 						.fa-search{
 							font-size: 22px;
 							vertical-align: middle;
 						}
-					}
-					&-item:last-child{
-						margin-left: 13px;
 					}
 					&-item:hover{
 						color: #18CFAB;
 					}
 					&-item:hover:not(:last-child){
 						border-bottom: 2px solid #18CFAB;
+					}
+				}
+
+				.search-form{
+					display: none;
+					position: absolute;
+					bottom: -53px;
+					right: 15px;
+					width: 670px;
+					height: 55px;
+					background: #fff;
+
+					&.active{
+						display: block;
+					}
+
+					.search-block{
+						display: flex;
+
+						input, button{
+							outline: none;
+							border: none;
+						}
+
+						input{
+							width: 92.5%;
+							height: 55px;
+							padding-left: 17px;
+							color: #A5A5A5;
+							font-family: "Montserrat-Regular";
+
+						}
+
+						button{
+							width: 7.5%;
+							background: #18CFAB;
+							color: #fff;
+							margin: 6px;
+							height: 45px;
+							font-size: 20px;
+						}
 					}
 				}
 			}

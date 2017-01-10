@@ -16,6 +16,38 @@ function initMap() {
 
 $(function () {
 
+	// ссылки-якоря в header (about and skills)
+
+	$(document).on('click', '.nav-menu-item.skills', function () {
+
+		$('.about-us .active').removeClass('active');
+		$('.about-us .menu li[data-tab="3"]').addClass('active');
+		$('.about-us .tab-content[data-tab="3"]').addClass('active');
+
+	});
+
+	$(document).on('click', '.nav-menu-item.history', function () {
+
+		$('.about-us .active').removeClass('active');
+		$('.about-us .menu li[data-tab="1"]').addClass('active');
+		$('.about-us .tab-content[data-tab="1"]').addClass('active');
+
+	});
+
+	// search bar
+
+	$(function () {
+
+		$(document).on('click', '.nav .nav-menu .search', function () {
+
+			$(this).toggleClass('active');
+			$(".search-form").toggleClass('active');
+
+		});
+	});
+
+
+
 	// слайдер в шапке
 
 	$('header .slides').slick({
@@ -38,7 +70,7 @@ $(function () {
 		$('.about-us [data-tab="' + tab_id + '"]').addClass('active');
 	});
 
-	// выравнивание высоты у табов с графиком
+	// выравнивание высоты у табов about-us
 
 	$(function () {
 
