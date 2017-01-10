@@ -16,6 +16,28 @@ function initMap() {
 
 $(function () {
 
+	// плавный scroll к секции по клику на ссылку в header
+
+	$(function () {
+
+		$(document).on('click', '.head-link', function(e) {
+
+			e.preventDefault();
+
+			var elemtId = $(this).attr('href');
+
+			if (elemId.length > 2) {
+				var top = $(elemId).offset().top;
+
+				$('body').animate({
+					scrollTop: top
+				}, 1500);
+			}
+
+		});
+
+	});
+
 	// ссылки-якоря в header (about and skills)
 
 	$(document).on('click', '.nav-menu-item.skills', function () {
